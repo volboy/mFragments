@@ -15,6 +15,8 @@ import java.util.ArrayList;
 public class FragmentTwo extends Fragment {
     TextView txtNote;
     ArrayList<String> myButtons=new ArrayList<String>();
+    public final static String BUTTON_INDEX="button_index";
+    private final static int BUTTON_INDEX_DEFAULT=-1;
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -23,6 +25,15 @@ public class FragmentTwo extends Fragment {
         txtNote=rootView.findViewById(R.id.txtNote);
         myButtons.add("Вперед");
         myButtons.add("Назад");
+        Bundle args=getArguments(); //получаем аргументы
+        //если агрументы не равны нули получаем индекс по ключу
+        //иначе присваем значение BUTTON_INDEX_DEFAULT
+        int buttonIndex=args!=null?args.getInt(BUTTON_INDEX, BUTTON_INDEX_DEFAULT):BUTTON_INDEX_DEFAULT;
+        //если индекс отличен от значения по умолчанию, то используем его
+        if (buttonIndex!=BUTTON_INDEX_DEFAULT){
+            setDescription(buttonIndex);
+        }
+
         return rootView;
     }
 

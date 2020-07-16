@@ -3,18 +3,15 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:id="@+id/container">
+    android:orientation="vertical">
 
-<!--    <fragment
+    <fragment
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/fragment1"
-        android:name="com.volboy.mfragments.FragmentOne"
+        android:id="@+id/fragment2"
+        android:name="com.volboy.mfragments.FragmentTwo"
         android:layout_weight="1"
-
-        />-->
-
+        />
 
 
 
